@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortowanie bombelkowe ver1</title>
+</head>
+<body>
+    <script>
+
+        //Divide and Conquer: dziel i zwyciężaj
+    function dzielenieTablic(tab){
+        //warunek stopu rekurencji
+        if(tab.length <= 1){
+            return tab;
+            
+        }
+        const polowa = Math.floor(tab.length / 2);
+        const lewa = tab.slice(0,polowa);
+        const prawa = tab.slice(polowa);
+        //wywołanie rekurencji
+        return scalanieTablic(dzielenieTablic(lewa),dzielenieTablic(prawa));
+    }
+    function scalanieTablic(lewa,prawa){
+        let wynik = [];
+        let i = 0;
+        let j = 0;
+
+        while(i<lewa.length && j < prawa.length){
+            if(lewa[i]<prawa[j]){
+                wynik.push(lewa[i]);
+                i++;
+            }else{
+                wynik.push(prawa[j]);
+                j++;
+            }
+        }
+        //dodajemy pozostale elementy przez wywolanie rekurencyjne
+        return wynik.concat(lewa.slice(i).concat(prawa.slice(j)));
+    }
+        const tab = [4,2,1,5,6,8,5,44];
+        console.log("Posortowana tablica: ", dzielenieTablic(tab));
+    </script>
+    
+</body>
+</html>

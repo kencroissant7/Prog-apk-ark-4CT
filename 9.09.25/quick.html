@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortowanie bombelkowe ver1</title>
+</head>
+<body>
+    <script>const tab = [4,2,1,5,6,8,5,44];
+
+    function sortQuick(tab){
+        //warunek stopu zatrzymania sie wywolywania rekurencji
+        if(tab.length <= 1){
+            return tab;
+        }
+
+        //kod rekurencji
+        const pivot = tab[tab.length-1];
+        const lewa = [];
+        const prawa = [];
+        
+        for (let i = 0; i <tab.length-1; i++){
+            if(tab[i] < pivot){
+                lewa.push(tab[i]);
+            }else{
+                prawa.push(tab[i]);
+            }
+        }
+
+
+        //zwracanie wartosci kopii funkcji rekurencyjnej do pamieci RAM
+        
+        return [...sortQuick(lewa),pivot,...sortQuick(prawa)];
+    }
+
+        
+        console.log("Posortowana tablica: ", sortQuick(tab));
+    </script>
+    
+</body>
+</html>

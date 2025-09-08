@@ -1,0 +1,33 @@
+EC2025 + sortowanie w JS
+
+O(n)                  O(n^2)            n log n    
+[3,4,5,6]             /
+                     /                              
+-sortowanie bombelkowe              
+sa dwie petle for w sobie
+1
+[4,3,2,7] O(n2)
+
+4>3 TRUE [3,4,2,7]
+4>2 TRUE [3,2,4,7]
+4>7 FALSE [3,2,4,7]
+
+2
+3>2 [2,3,4,7]
+3>4 [2,3,4,7]
+4>7 [2,3,4,7]
+
+3
+....
+
+4
+SWAP(4,3)
+
+
+-Quick sort  -> Rekurencja
+
+[4,3,2,7,1,6,8,5] -> max24
+
+
+
+Merge Sort
