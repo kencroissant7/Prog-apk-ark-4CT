@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wynik"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const wynik = document.getElementById("wynik");
+            
+            class StacjaPogodowa{
+                constructor(){
+                    this.oberwatorzy = [];
+                    this.temperatura = 0;
+                }
+                subscribe(obserwator){
+                    this.oberwatorzy.push(obserwator);
+                }
+                unsubscribe(obserwator){
+                    this.oberwatorzy = this.oberwatorzy.filter(obs => obs!==obserwator) ;
+                }
+                setTemperature(temp){
+                    wynik.innerText += `nowa temperatora: ${temp}°C\n`;
+                    this.temperatura = temp;
+                }
+                powiadomienieObserwatora(){
+                    this.oberwatorzy.foreach(ob=>ob.update(this.temperatura));
+                }
+            }
+
+            class NaTelefon{
+                constructor(name){
+                    this.name = name;
+                }
+                update(temp){
+                    wynik.innerText += `${this.name} Wyświetlacz telefonu: temp = ${temp}\n`;
+                }
+            }
+
+            class NaStronie{
+                update(temp){
+                    wynik.innerText += `temp aktualna na stronie www = ${temp}°C\n`;
+                }
+            }
+
+            const stacjaPogodowa = new StacjaPogodowa();
+            const iphone = new NaTelefon("Iphone 14");
+            const stronawww = new NaStronie();
+
+            stacjaPogodowa.subscribe(iphone);
+            stacjaPogodowa.subscribe(stronawww);
+
+            stacjaPogodowa.setTemperature(18);
+
+            stacjaPogodowa.unsubscribe(iphone);
+
+            stacjaPogodowa.setTemperature(-5);
+
+        });
+    </script>
+</body>
+</html>
