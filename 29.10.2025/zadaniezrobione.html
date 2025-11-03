@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Sortowanie i pakowanie towarów</title>
+<style>
+  /* === Stylizacja strony === */
+  body { 
+    font-family: Arial, sans-serif; 
+    background: #f2f2f2; 
+    color: #333; 
+    padding: 20px; 
+  }
+  h1 { text-align: center; }
+  #do_pakowania, #wynik { 
+    background: #fff; 
+    padding: 15px; 
+    margin: 20px auto; 
+    width: 90%; 
+    max-width: 800px; 
+    border-radius: 6px; 
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  .item { 
+    padding: 5px 0; 
+    border-bottom: 1px solid #eee; 
+  }
+  .wynik-item { 
+    font-weight: bold; 
+    color: #007700; 
+  }
+</style>
+</head>
+<body>
+
+<h1>System pakowania towarów (maks. 100 kg)</h1>
+
+<!-- Sekcja, w której wyświetlona będzie lista wszystkich towarów -->
+<div id="do_pakowania"></div>
+
+<!-- Sekcja, w której pojawi się wynik – spakowane towary -->
+<div id="wynik"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Kod uruchomi się dopiero, gdy cała zawartość HTML zostanie załadowana
+
+  // === 1. Tworzymy tablicę obiektów reprezentujących towary ===
+  // Każdy obiekt ma: nazwę, cenę i wagę
+  const rzeczy_do_pakowania = [
+    {nazwa: "Laptop", cena: 2500, waga: 5},
+    {nazwa: "Telefon", cena: 1200, waga: 2},
+    {nazwa: "Zegarek", cena: 800, waga: 1},
+    {nazwa: "Słuchawki", cena: 300, waga: 1},
+    {nazwa: "Powerbank", cena: 250, waga: 1},
+    {nazwa: "Kamera", cena: 1800, waga: 4},
+    {nazwa: "Lornetka", cena: 700, waga: 2},
+    {nazwa: "Latarka", cena: 150, waga: 1},
+    {nazwa: "Nóż", cena: 200, waga: 2},
+    {nazwa: "Tablet", cena: 1500, waga: 4},
+    {nazwa: "Radio", cena: 400, waga: 3},
+    {nazwa: "Monitor", cena: 900, waga: 6},
+    {nazwa: "Drukarka", cena: 700, waga: 8},
+    {nazwa: "Pendrive", cena: 80, waga: 0.2},
+    {nazwa: "Torba", cena: 120, waga: 1},
+    {nazwa: "Buty", cena: 250, waga: 2},
+    {nazwa: "Kurtka", cena: 300, waga: 3},
+    {nazwa: "Spodnie", cena: 200, waga: 2},
+    {nazwa: "Bluza", cena: 180, waga: 2},
+    {nazwa: "Okulary", cena: 350, waga: 0.5},
+    {nazwa: "Książka", cena: 60, waga: 1},
+    {nazwa: "Aparat", cena: 2200, waga: 3},
+    {nazwa: "Router", cena: 250, waga: 1},
+    {nazwa: "Dysk SSD", cena: 400, waga: 0.5},
+    {nazwa: "Dysk HDD", cena: 300, waga: 1},
+    {nazwa: "Gra planszowa", cena: 150, waga: 3},
+    {nazwa: "Głośnik", cena: 600, waga: 4},
+    {nazwa: "Telewizor", cena: 2000, waga: 10},
+    {nazwa: "Konsola", cena: 1800, waga: 5},
+    {nazwa: "Klawiatura", cena: 250, waga: 2},
+    {nazwa: "Myszka", cena: 120, waga: 1},
+    {nazwa: "Drukarka 3D", cena: 3000, waga: 12},
+    {nazwa: "Wiertarka", cena: 500, waga: 4},
+    {nazwa: "Piła", cena: 700, waga: 6},
+    {nazwa: "Zestaw narzędzi", cena: 900, waga: 10},
+    {nazwa: "Kubek", cena: 40, waga: 0.5},
+    {nazwa: "Lusterko", cena: 30, waga: 1},
+    {nazwa: "Zapalniczka", cena: 20, waga: 0.2},
+    {nazwa: "Portfel", cena: 150, waga: 0.5},
+    {nazwa: "Plecak", cena: 200, waga: 2},
+    {nazwa: "Woda", cena: 10, waga: 2},
+    {nazwa: "Kabel", cena: 50, waga: 0.5},
+    {nazwa: "Power adapter", cena: 80, waga: 1},
+    {nazwa: "Książka kucharska", cena: 70, waga: 1},
+    {nazwa: "Gra PC", cena: 120, waga: 0.3},
+    {nazwa: "Zestaw Lego", cena: 500, waga: 3},
+    {nazwa: "Zegar", cena: 300, waga: 2},
+    {nazwa: "Kompas", cena: 100, waga: 1},
+    {nazwa: "Smartwatch", cena: 900, waga: 0.8}
+  ];
+
+  // === 2. Obliczamy wartość (stosunek cena/waga) i sortujemy malejąco ===
+  // Wartość mówi nam, ile "złotych" przypada na 1 kg – im wyższa, tym bardziej opłaca się dany towar zabrać
+  const posortowane = rzeczy_do_pakowania
+    .map(item => ({ ...item, wartosc: item.cena / item.waga })) // dodajemy nowe pole 'wartosc'
+    .sort((a, b) => b.wartosc - a.wartosc); // sortujemy od najwyższej wartości do najniższej
+
+  // === 3. Wyświetlamy całą listę towarów na stronie ===
+  const do_pakowania = document.getElementById("do_pakowania");
+  do_pakowania.innerHTML = "<h2>Lista towarów:</h2>";
+  posortowane.forEach(el => {
+    // Dla każdego towaru tworzymy linię tekstu z jego nazwą, ceną, wagą i obliczoną wartością
+    do_pakowania.innerHTML += 
+      `<div class="item">${el.nazwa} — cena: ${el.cena} zł, waga: ${el.waga} kg, wartość: ${el.wartosc.toFixed(2)}</div>`;
+  });
+
+  // === 4. Pakowanie — wybieramy najbardziej opłacalne przedmioty, dopóki nie przekroczymy 100 kg ===
+  const max_uciag = 100; // maksymalna waga, którą możemy spakować
+  let suma_wagi = 0;
+  let suma_ceny = 0;
+  let spakowane = []; // lista przedmiotów, które zmieściły się do "plecaka"
+
+  for (let el of posortowane) {
+    // Sprawdzamy, czy kolejny przedmiot zmieści się w limicie
+    if (suma_wagi + el.waga <= max_uciag) {
+      spakowane.push(el);      // dodajemy przedmiot
+      suma_wagi += el.waga;    // zwiększamy łączną wagę
+      suma_ceny += el.cena;    // zwiększamy łączną wartość (cenę)
+    }
+  }
+
+  // === 5. Wyświetlamy wynik pakowania ===
+  const wynik = document.getElementById("wynik");
+  wynik.innerHTML = `<h2>Spakowane przedmioty (limit 100 kg)</h2>`;
+  spakowane.forEach(el => {
+    wynik.innerHTML += 
+      `<div class="wynik-item">${el.nazwa} — cena: ${el.cena} zł, waga: ${el.waga} kg, wartość: ${el.wartosc.toFixed(2)}</div>`;
+  });
+
+  // Podsumowanie: łączna waga i wartość spakowanych rzeczy
+  wynik.innerHTML += `<p>
+    <b>Łączna waga:</b> ${suma_wagi.toFixed(2)} kg<br>
+    <b>Łączna wartość:</b> ${suma_ceny.toFixed(2)} zł
+  </p>`;
+});
+</script>
+
+</body>
+</html>

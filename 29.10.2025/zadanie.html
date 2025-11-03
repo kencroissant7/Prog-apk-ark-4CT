@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Przedmioty do pakowania:</h2>
+    <div id="do_pakowania">
+
+    </div>
+    <h2>Zawartośc plecaka:</h2>
+    <div id="wynik">
+
+    </div>
+    <script>
+        /*
+        Wygeneruj z internetu przykładową listę towarów która posiada: nazwe, cene i wage. Ilosc towarów to około 50.
+        Maksymany transport którym kurier zabierze elementy to 100kg.
+        Kurier zabierze tylko najbardziej wartościowe przedmioty (wartość = cena/waga).
+        Całość zaimplementuj w postaci strony internetowej html + js
+        */
+        document.addEventListener("DOMContentLoaded", function() {
+            const do_pakowania = document.getElementById("do_pakowania");
+            const wynik = document.getElementById("wynik");
+            const rzeczy_do_pakowania = [
+                { nazwa: "Lusterko", cena: 20, waga: 1},
+                { nazwa: "Skarpety", cena: 30, waga: 1},
+                { nazwa: "Telefon", cena: 250, waga: 2},
+                { nazwa: "Woda", cena: 10, waga: 2 },
+                { nazwa: "Nóż", cena: 150, waga: 4 },
+                { nazwa: "Laptop", cena: 1500, waga: 5 },
+                { nazwa: "Kompas", cena: 150, waga: 2 },
+            ];
+            const posortowane_wyliczone = rzeczy_do_pakowania.map(item => ({
+                    ...item, wartosc: item.cena / item.waga
+            })).sort((a,b)=>b.wartosc - a.wartosc);
+
+            posortowane_wyliczone.forEach(function(el) {
+                do_pakowania.innerHTML += el.nazwa + " " + el.cena + " " + el.waga + " " + el.wartosc + "<br>";
+            });
+
+            const max_uciag_kuriera = 100;
+            
+           
+        });
+    </script>
+</body>
+</html>
