@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,4 +56,63 @@
         });
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wynik"></div>
+    <script>
+        //wzorzec obserwator jest zwiazany z relacja obiektow "jeden do wielu"
+        document.addEventListener("DOMContentLoaded",()=>{
+            const wynik = document.getElementsByTagName("wynik")[0];
+
+            class Subject {
+                constructor() {
+                    this.observers = [];
+                }
+                subscribe(observer){
+                    this.observers.push(observer);
+                }
+                unsubscribe(observer){
+                    this.observers = this.observers.filter(obs => obs!==observer) ;
+                }
+                notify(data){
+                    this.observers.forEach(observer => observer.update(data));
+                }
+            }
+            
+            class Observer{
+                constructor(name){
+                    this.name = name
+                }
+                update(data){
+                    console.log(`${this.name} otrzymał powiadomienie: ${data}`);
+                }
+            }
+       
+            //test
+            const subject = new Subject();
+            const obs1 = new Observer("Arkadiusz");
+            const obs2 = new Observer("Dariusz");
+            const obs3 = new Observer("Grzegorz");
+            const obs4 = new Observer("Zygmunt");
+
+            subject.subscribe(obs1);
+            subject.subscribe(obs2);
+            subject.subscribe(obs3);
+            subject.subscribe(obs4);
+
+            subject.notify("Dzis zwirek z muchomorkiem sie poklocil...");
+            subject.unsubscribe(obs3);
+
+            subject.notify("Dzisiaj zwirek z muchomorkiem sie pogodzili...");
+        });
+    </script>
+</body>
+>>>>>>> accd54a0c7df032ea4cd520d25ba6864a6bab4e2
 </html>

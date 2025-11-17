@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let dex = "dihh 67";
+        let shift = 3;
+        let result = "";
+        for(let i = 0; i<text.length;i++){
+            let c = text[i];
+            if(/[a-zA-Z]/.text(c)){
+                let code = text.charCodeAt(i);
+                let offset = (c===c.toUpperCase()) ? 65 :97;
+                let index = code - offset
+                let przesuniecie = index + shift;
+                let modulo = przesuniacie % 26;
+                let dodajoffset = modulo + offset;
+                let newChar = String.fromCharCode(dodajoffset);
+
+                result +=newChar;
+            }else{
+                result+=c;
+            }
+        }console.log(result);
+    </script>
+</body>
+</html>
