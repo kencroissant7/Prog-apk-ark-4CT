@@ -1,0 +1,14 @@
+temat: Hook's useState() && useEffect()
+
+useState() - służy do utrzymywania stanu komponentu
+Redux - służy do utrzymania stanu aplikacji
+
+useEffect() jest to funkcja która renderuje na nowo np. komponent na podstawie dependencji (zależności)
+------------------------
+const [imie,setImie] = useState("inicjalna wartość startowa")
+const [imie,setImie] = useState("") to znaczy ze zmienna imie = "" jest
+pusta, 1 parametr imie to zmienna, 2 parametr to funkcja,
+
+
+
+utworz kalkulator wyznaczający pole kola, pole rombu, pole trojkata i prostokąta, energia potencjalna, kinetyczna
