@@ -1,0 +1,5 @@
+C:\Users\programista\Desktop\4ct konrad\Prog-apk-ark-4CT\07.01.2026\Aplikacjadotestwo\Aplikacjadotestwo\obj\Debug\net8.0\Aplikacjadotestwo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\programista\Desktop\4ct konrad\Prog-apk-ark-4CT\07.01.2026\Aplikacjadotestwo\Aplikacjadotestwo\obj\Debug\net8.0\Aplikacjadotestwo.AssemblyInfoInputs.cache
+C:\Users\programista\Desktop\4ct konrad\Prog-apk-ark-4CT\07.01.2026\Aplikacjadotestwo\Aplikacjadotestwo\obj\Debug\net8.0\Aplikacjadotestwo.AssemblyInfo.cs
+C:\Users\programista\Desktop\4ct konrad\Prog-apk-ark-4CT\07.01.2026\Aplikacjadotestwo\Aplikacjadotestwo\obj\Debug\net8.0\Aplikacjadotestwo.csproj.CoreCompileInputs.cache
+C:\Users\programista\Desktop\4ct konrad\Prog-apk-ark-4CT\07.01.2026\Aplikacjadotestwo\Aplikacjadotestwo\obj\Debug\net8.0\Aplikacjadotestwo.sourcelink.json

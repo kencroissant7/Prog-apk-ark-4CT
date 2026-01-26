@@ -1,0 +1,2 @@
+apk w angular 4 komponenty 1 start zawiera menu,
+każdy z comp posiada prezentacji animacji wybranego owocu (każdy comp m 3 rozne animacje)
