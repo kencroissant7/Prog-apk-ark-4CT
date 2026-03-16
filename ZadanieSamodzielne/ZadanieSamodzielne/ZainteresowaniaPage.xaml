@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZadanieSamodzielne.ZainteresowaniaPage"
+             Title="ZainteresowaniaPage">
+    <VerticalStackLayout Padding="10" Spacing="15">
+        <Label 
+            Text="Moje zainteresowania:"
+            FontSize="24"
+            FontAttributes="Bold"/>
+
+        <Label Text="Czolgi"
+            FontSize="16"/>
+
+        
+
+        <Label Text="Lubie grac w gry"
+            FontSize="16"/>
+
+        <Label Text="Nie lubie chodzic do szkoly"
+    FontSize="16"/>
+
+        <Label Text="Lubie silke"
+    FontSize="16"/>
+
+    </VerticalStackLayout>
+</ContentPage>

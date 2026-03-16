@@ -1,0 +1,183 @@
+Temat: testownaiue programu w oparciu o c$ NUnit,
+oraz python unittest
+
+c#: Package: NUnit, Microsoft SDK Test, NUnit Adapter
+-----
+VS code rozszerzenie C# DEV KIT
+1. Konsolowe
+A:przygotoania srodowiska testujacego (C#) za pomoca .NET
+
+dotnet --version
+dotnet classlib -n Kalkulator
+dotnet new nunit -n Kalkulator.Test
+cd Kalkulator.Test\
+ dotnet add package NUnit
+ dotnet add package NUnit3TestAdapter
+ dotnet add package Microsoft.NET.Test.Sdk
+ dotnet add reference ..\Kalkulator\Kalkulator.csproj
+
+B: etap tworzenia testow (VS CODE)
+Po utworzeniu klasy testujacej
+cmder: dotnet test, uruchamiamy w miejscu gdzie jest główny katalog:
+Projekt a w katalogu "Projekt" mamy np.Katalogi: "Kalkulator" i
+"Kalkulator.Test"
+cd ..
+ls "Kalkulator" i "Kalkulator.Test"
+
+
+ 2. Gui IDE
+
+
+
+
+----------------------------------------------------------------
+ od arka: 
+Temat: Testowanie programu w oparciu o: c# NUnit, oraz python unittest
+
+c#: Package: NUint, Microsoft SDK Test, NUint Adapter
+VSCODE - install rozszerzenie: C# Dev Kit (propozycja)
+-----
+1. Konsolowe
+Przygotowania środowiska testującego c#
+---------------------------------------
+dotnet --version
+dotnet new classlib -n Kalkulator
+dotnet new nunit -n Kalkulator.Test
+cd Kalkulator.Test
+dotnet add package NUnit
+dotnet add package NUnit3TestAdapter
+dotnet add package Microsoft.NET.Test.Sdk
+dotnet add reference ..\Kalkulator\Kalkulator.csproj
+
+2 etap - Tworzenie testów ( VSCODE )
+----------------------------
+Po utworzeniu klasy testującej
+cmder: dotnet test ( uruchamiamy w miejscu gdzie jest główny Katalog: Projekt a w katalogu
+"Projekt" mamy np. Katalogi: "Kalkulator" i "Kalkulator.Test" )
+ls
+"Kalkulator" i "Kalkulator.Test"
+
+2. Gui IDE - Microsoft Studio 2022
+
+Narzędzia:
+--------------------
+https://dotnet.microsoft.com/en-us/download
+
+
+Klasa Kalkulator:
+-----------------------
+
+using System;
+
+namespace Kalkulator
+{
+    public class Kalkulator
+    {
+        public double Dodawanie(double a, double b) => a + b;
+        public double Odejmowanie(double a, double b) => a - b;
+        public double Mnozenie(double a, double b) => a * b;
+        public double Dzielenie(double a, double b)
+        {
+            if (b == 0)
+            {
+                throw new ArgumentException("Nie dziel szlachcicu przez ZERO");
+            }
+
+            return a / b;   
+        }
+    }
+}
+
+
+
+
+Klasa Kalkulator.Test
+-------------------------
+using NUnit.Framework;
+using System;
+using Kalkulator;
+
+namespace Kalkulator.Test
+{
+    public class KalkulatorTest
+    {
+        private Kalkulator _kalkulator;
+
+        [SetUp]
+        public void Setup()
+        {
+            _kalkulator = new Kalkulator();
+        }
+
+        [Test]
+        public void Dodawanie_powinna_zwrocic_sume_a_b()
+        {
+            //aaa x3
+
+            //Arrange
+            double a = 10;
+            double b = 5;
+            double result = 15;
+
+            //Act
+            double act = _kalkulator.Dodawanie(a, b);
+
+            //Assert
+            Assert.That(act, Is.EqualTo(result));
+        }
+
+        [Test]
+        public void Odejmowanie_powinna_zwrocic_roznicy_a_b()
+        {
+            //aaa x3
+
+            //Arrange
+            double a = 10;
+            double b = 5;
+            double result = 5;
+
+            //Act
+            double act = _kalkulator.Odejmowanie(a, b);
+
+            //Assert
+            Assert.That(act, Is.EqualTo(result));
+        }
+
+        [Test]
+        public void Mnozenie_powinna_zwrocic_iloczyn_a_b()
+        {
+            //aaa x3
+
+            //Arrange
+            double a = 10;
+            double b = 5;
+            double result = 50;
+
+            //Act
+            double act = _kalkulator.Mnozenie(a, b);
+
+            //Assert
+            Assert.That(act, Is.EqualTo(result));
+        }
+
+        [Test]
+        public void Dzielenie_powinna_zwrocic_iloraz_a_b()
+        {
+            //aaa x3
+
+            //Arrange
+            double a = 10;
+            double b = 5;
+            double result = 2;
+
+            //Act
+            double act = _kalkulator.Dzielenie(a, b);
+
+            //Assert
+            Assert.That(act, Is.EqualTo(result));
+        }
+    }
+}
+
+
+

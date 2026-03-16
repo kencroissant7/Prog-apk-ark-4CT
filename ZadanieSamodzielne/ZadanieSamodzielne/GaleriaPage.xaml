@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZadanieSamodzielne.GaleriaPage"
+             Title="GaleriaPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="15">
+            <Label 
+                Text="To jest zdjęcie Morskiego Oka"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />   
+            <Image x:Name="foto1" Source="foto1.jpg" HeightRequest="300" WidthRequest="300" Aspect="AspectFill"/>
+            <Button Text="Btn1"
+                WidthRequest="120"
+                HeightRequest="40"
+                Clicked="OnFoto1Clicked" />
+            <Label 
+                Text="To jest zdjęcie Kota"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Image x:Name="foto2" Source="foto2.jpg" HeightRequest="300" WidthRequest="300" Aspect="AspectFill"/>
+            <Button Text="Btn2"
+                WidthRequest="120"
+                HeightRequest="40"
+                Clicked="OnFoto2Clicked" />
+            <Label 
+                Text="To jest zdjęcie Psa"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Image x:Name="foto3" Source="foto3.jpg" HeightRequest="300" WidthRequest="300" Aspect="AspectFill"/>
+            <Button Text="Btn3"
+                WidthRequest="120"
+                HeightRequest="40"
+                Clicked="OnFoto3Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

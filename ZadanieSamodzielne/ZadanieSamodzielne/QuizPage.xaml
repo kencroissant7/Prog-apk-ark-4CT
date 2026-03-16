@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZadanieSamodzielne.QuizPage"
+             Title="QuizPage">
+    <VerticalStackLayout Padding="10" Spacing="15">
+        <!-- Pytanie -->
+        <Label x:Name="QuestionLabel"
+               Text="Pytanie"
+               FontAttributes="Bold"
+               FontSize="18"/>
+
+        <!-- Odpowiedzi -->
+        <RadioButton x:Name="Option1"
+                     GroupName="Answer"
+                     Content="Opcja 1"/>
+
+        <RadioButton x:Name="Option2"
+                     GroupName="Answer"
+                     Content="Opcja 2"/>
+
+        <!-- Przycisk następne -->
+        <Button x:Name="NextButton"
+                Text="Następne"
+                Clicked="OnNextClicked"/>
+
+        <!-- Wynik -->
+        <Label x:Name="ResultLabel"
+               FontAttributes="Bold"
+               TextColor="Green"/>
+    </VerticalStackLayout>
+</ContentPage>

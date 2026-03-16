@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ZadanieSamodzielne.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ZadanieSamodzielne"
+    Title="ZadanieSamodzielne">
+
+    <FlyoutItem Title="O mnie">
+        <ShellContent ContentTemplate="{DataTemplate local:OmniePage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Zainteresowania">
+        <ShellContent ContentTemplate="{DataTemplate local:ZainteresowaniaPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Galeria">
+        <ShellContent ContentTemplate="{DataTemplate local:GaleriaPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Quiz">
+        <ShellContent ContentTemplate="{DataTemplate local:QuizPage}"/>
+    </FlyoutItem>
+
+</Shell>

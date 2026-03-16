@@ -1,0 +1,15 @@
+C:\Users\programista\Desktop\ja\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\bin\Debug\Kalkulator.exe.config
+C:\Users\programista\Desktop\ja\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\bin\Debug\Kalkulator.exe
+C:\Users\programista\Desktop\ja\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\bin\Debug\Kalkulator.pdb
+C:\Users\programista\Desktop\ja\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\obj\Debug\Kalkulator.csproj.AssemblyReference.cache
+C:\Users\programista\Desktop\ja\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\obj\Debug\Kalkulator.csproj.CoreCompileInputs.cache
+C:\Users\programista\Desktop\ja\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\obj\Debug\Kalkulator.exe
+C:\Users\programista\Desktop\ja\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\obj\Debug\Kalkulator.pdb
+C:\Users\Laptop\Desktop\Materiały\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\bin\Debug\Kalkulator.exe.config
+C:\Users\Laptop\Desktop\Materiały\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\bin\Debug\Kalkulator.exe
+C:\Users\Laptop\Desktop\Materiały\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\bin\Debug\Kalkulator.pdb
+C:\Users\Laptop\Desktop\Materiały\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\obj\Debug\Kalkulator.csproj.AssemblyReference.cache
+C:\Users\Laptop\Desktop\Materiały\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\obj\Debug\Kalkulator.exe.config
+C:\Users\Laptop\Desktop\Materiały\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\obj\Debug\Kalkulator.csproj.CoreCompileInputs.cache
+C:\Users\Laptop\Desktop\Materiały\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\obj\Debug\Kalkulator.exe
+C:\Users\Laptop\Desktop\Materiały\Prog-apk-ark-4CT\03.12-2TEST\Kalkulator\obj\Debug\Kalkulator.pdb
